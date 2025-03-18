@@ -12,6 +12,7 @@ import {
   CardContent,
   IconButton,
   Avatar,
+  CardMedia,
 } from "@mui/material";
 import { gradientTheme, lightTheme } from "../theme";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
@@ -25,6 +26,8 @@ import html from "../assets/html.svg";
 import css from "../assets/css.svg";
 import git from "../assets/git.svg";
 import profile from "../assets/profile_avatar.png";
+import exousiass from "../assets/projectsss/exousia1.png";
+import priaccss from "../assets/projectsss/priacc1.png";
 import gsap from "gsap";
 
 const App = () => {
@@ -102,20 +105,36 @@ const App = () => {
                   sx={{
                     transition: "transform 0.3s",
                     "&:hover": { transform: "scale(1.05)" },
+                    boxShadow: 4, // Increased shadow for depth
+                    borderRadius: 2,
+                    bgcolor: "background.paper",
+                    p: 0.5,
                   }}
                 >
+                  <CardMedia component="img" height="180" image={exousiass} />
                   <CardContent>
                     <Typography variant="h6">Ecuity Exousia</Typography>
                     <Typography color="textSecondary">
                       Static landing page for a Hyderabad-based client using
                       React & Material UI
                     </Typography>
-                    <Box sx={{ mt: 2, display: "flex", gap: 1 }}>
+                    <Box
+                      sx={{
+                        mt: 2,
+                        display: "flex",
+                        gap: 1,
+                        justifyContent: "center",
+                      }}
+                    >
                       <Button
                         variant="contained"
                         href="https://www.ecuityexousia.in"
                         target="_blank"
-                        sx={{ flex: 1 }}
+                        sx={{
+                          flex: 1,
+                          bgcolor: "customButton.main",
+                          color: "customButton.contrastText",
+                        }}
                       >
                         Live Demo
                       </Button>
@@ -123,7 +142,11 @@ const App = () => {
                         variant="outlined"
                         href="https://github.com/Sanath2349/ecuityexousia"
                         target="_blank"
-                        sx={{ flex: 1 }}
+                        sx={{
+                          flex: 1,
+                          borderColor: "customButton.border",
+                          color: "customButton.main",
+                        }}
                       >
                         GitHub
                       </Button>
@@ -137,20 +160,36 @@ const App = () => {
                   sx={{
                     transition: "transform 0.3s",
                     "&:hover": { transform: "scale(1.05)" },
+                    boxShadow: 4, // Increased shadow for depth
+                    borderRadius: 2,
+                    bgcolor: "background.paper",
+                    p: 0.5,
                   }}
                 >
+                  <CardMedia component="img" height="180" image={priaccss} />
                   <CardContent>
                     <Typography variant="h6">Priacc Innovations</Typography>
                     <Typography color="textSecondary">
-                      Static landing page for a Hyderabad-based SaaS agency
+                      Static landing page for a SaaS agency
                       client using React & Material UI
                     </Typography>
-                    <Box sx={{ mt: 2, display: "flex", gap: 1 }}>
+                    <Box
+                      sx={{
+                        mt: 2,
+                        display: "flex",
+                        gap: 1,
+                        justifyContent: "center",
+                      }}
+                    >
                       <Button
                         variant="contained"
                         href="https://www.priaccinovations.com"
                         target="_blank"
-                        sx={{ flex: 1 }}
+                        sx={{
+                          flex: 1,
+                          bgcolor: "customButton.main",
+                          color: "customButton.contrastText",
+                        }}
                       >
                         Live Demo
                       </Button>
@@ -158,7 +197,11 @@ const App = () => {
                         variant="outlined"
                         href="https://github.com/Sanath2349/priaccinovations"
                         target="_blank"
-                        sx={{ flex: 1 }}
+                        sx={{
+                          flex: 1,
+                          borderColor: "customButton.border",
+                          color: "customButton.main",
+                        }}
                       >
                         GitHub
                       </Button>
@@ -172,8 +215,13 @@ const App = () => {
                   sx={{
                     transition: "transform 0.3s",
                     "&:hover": { transform: "scale(1.05)" },
+                    boxShadow: 4, // Increased shadow for depth
+                    borderRadius: 2,
+                    bgcolor: "background.paper",
+                    p: 0.5,
                   }}
                 >
+                  <CardMedia component="img" height="180" image={exousiass} />
                   <CardContent>
                     <Typography variant="h6">Task Tracker (Planned)</Typography>
                     <Typography color="textSecondary">

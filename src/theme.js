@@ -12,6 +12,11 @@ export const gradientTheme = createTheme({
       primary: "#ffffff", // Default text in dark mode
       secondary: "#e0e0e0", // Subtle gray for secondary text
     },
+    customButton: {
+      main: "#d100d1", // Purple for dark theme
+      contrastText: "#fff", // White text
+      border: "#d100d1", // Border color
+    },
   },
   components: {
     MuiTypography: {
@@ -34,25 +39,29 @@ export const gradientTheme = createTheme({
   },
 });
 
-
 // Light Theme (Solid background)
 export const lightTheme = createTheme({
   palette: {
-    mode: 'light',
-    primary: { main: '#1976d2' },
-    background: { 
-      default: '#f5f5f5', // Soft white background
-      paper: '#fff',
+    mode: "light",
+    primary: { main: "#1976d2" },
+    background: {
+      default: "#f5f5f5", // Soft white background
+      paper: "#fff",
     },
-    text: { 
-      primary: '#000000',
-      secondary: '#666',
+    text: {
+      primary: "#000000",
+      secondary: "#666",
     },
+    customButton: {
+      main: "#1976d2",      // Blue for light theme
+      contrastText: "#fff", // White text
+      border: "#1976d2"     // Border color
+    }
   },
   components: {
     MuiTypography: {
       styleOverrides: {
-        h2: { color: '#1976d2' }, // Blue for "Frontend Developer" in light mode
+        h2: { color: "#1976d2" }, // Blue for "Frontend Developer" in light mode
       },
     },
   },
