@@ -13,7 +13,7 @@ import {
   IconButton,
   Avatar,
 } from "@mui/material";
-import { lightTheme, darkTheme } from "../theme";
+import { gradientTheme, lightTheme } from "../theme";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import reactLogo from "../assets/react-2.svg";
@@ -28,29 +28,41 @@ import profile from "../assets/profile_avatar.png";
 import gsap from "gsap";
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [isLightMode, setIsLightMode] = useState(false); // Default to gradient (false)
 
   useEffect(() => {
     console.log("Animating with GSAP");
-    gsap.fromTo(".project-card",{opacity:0,y:30}, {
-      opacity: 1,
-      y: 0,
-      stagger: 0.2,
-      duration: 0.5,
-      ease: "power2.out", // Smoother easing
-    });
+    gsap.fromTo(
+      ".project-card",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.2,
+        duration: 0.5,
+        ease: "power2.out", // Smoother easing
+      }
+    );
   }, []);
 
-  const toggleTheme = () => setDarkMode(!darkMode);
+  const toggleTheme = () => setIsLightMode(!isLightMode);
 
   return (
-    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <Box sx={{ bgcolor: "background.default", minHeight: "100vh" }}>
+    <ThemeProvider theme={isLightMode ? lightTheme : gradientTheme}>
+      <Box
+        sx={{
+          background: isLightMode
+            ? "none"
+            : "radial-gradient(circle, rgb(13, 20, 55) 0%, rgb(21, 6, 9) 100%)",
+          minHeight: "100vh",
+          color: "text.primary",
+        }}
+      >
         <AppBar position="static" elevation={2}>
           <Toolbar sx={{ justifyContent: "space-between" }}>
             <Typography variant="h6">Sanath Geedipally</Typography>
             <IconButton color="inherit" onClick={toggleTheme}>
-              {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
+              {isLightMode ? <Brightness7Icon /> : <Brightness4Icon />}
             </IconButton>
           </Toolbar>
         </AppBar>
@@ -93,17 +105,29 @@ const App = () => {
                   }}
                 >
                   <CardContent>
-                    <Typography variant="h6">Aidisha (In Progress)</Typography>
+                    <Typography variant="h6">Ecuity Exousia</Typography>
                     <Typography color="textSecondary">
-                      AI-powered interview agent with React & Material UI
+                      Static landing page for a Hyderabad-based client using
+                      React & Material UI
                     </Typography>
-                    <Button
-                      variant="outlined"
-                      href="https://github.com/Sanath2349/Aidisha"
-                      sx={{ mt: 2 }}
-                    >
-                      GitHub (Pending)
-                    </Button>
+                    <Box sx={{ mt: 2, display: "flex", gap: 1 }}>
+                      <Button
+                        variant="contained"
+                        href="https://www.ecuityexousia.in"
+                        target="_blank"
+                        sx={{ flex: 1 }}
+                      >
+                        Live Demo
+                      </Button>
+                      <Button
+                        variant="outlined"
+                        href="https://github.com/Sanath2349/ecuityexousia"
+                        target="_blank"
+                        sx={{ flex: 1 }}
+                      >
+                        GitHub
+                      </Button>
+                    </Box>
                   </CardContent>
                 </Card>
               </Grid>
@@ -116,13 +140,29 @@ const App = () => {
                   }}
                 >
                   <CardContent>
-                    <Typography variant="h6">Landing Pages</Typography>
+                    <Typography variant="h6">Priacc Innovations</Typography>
                     <Typography color="textSecondary">
-                      Static sites for Hyderabad clients
+                      Static landing page for a Hyderabad-based SaaS agency
+                      client using React & Material UI
                     </Typography>
-                    <Button variant="outlined" href="#" sx={{ mt: 2 }}>
-                      GitHub (Soon)
-                    </Button>
+                    <Box sx={{ mt: 2, display: "flex", gap: 1 }}>
+                      <Button
+                        variant="contained"
+                        href="https://www.priaccinovations.com"
+                        target="_blank"
+                        sx={{ flex: 1 }}
+                      >
+                        Live Demo
+                      </Button>
+                      <Button
+                        variant="outlined"
+                        href="https://github.com/Sanath2349/priaccinovations"
+                        target="_blank"
+                        sx={{ flex: 1 }}
+                      >
+                        GitHub
+                      </Button>
+                    </Box>
                   </CardContent>
                 </Card>
               </Grid>
