@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import {
   AppBar,
@@ -11,21 +11,35 @@ import {
   Card,
   CardContent,
   IconButton,
+  Avatar,
 } from "@mui/material";
 import { lightTheme, darkTheme } from "../theme";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
-import reactLogo from "../assets/react-2.svg"
-import jslogo from "../assets/jsLogo.svg"
-import gsapLogo from "../assets/gsap.svg"
-import tailwind from "../assets/tailwind.svg"
-import mui from "../assets/mui.svg"
-import html from "../assets/html.svg"
-import css from "../assets/css.svg"
-import git from "../assets/git.svg"
+import reactLogo from "../assets/react-2.svg";
+import jslogo from "../assets/jsLogo.svg";
+import gsapLogo from "../assets/gsap.svg";
+import tailwind from "../assets/tailwind.svg";
+import mui from "../assets/mui.svg";
+import html from "../assets/html.svg";
+import css from "../assets/css.svg";
+import git from "../assets/git.svg";
+import profile from "../assets/profile_avatar.png";
+import gsap from "gsap";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    console.log("Animating with GSAP");
+    gsap.fromTo(".project-card",{opacity:0,y:30}, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.2,
+      duration: 0.5,
+      ease: "power2.out", // Smoother easing
+    });
+  }, []);
 
   const toggleTheme = () => setDarkMode(!darkMode);
 
@@ -42,6 +56,10 @@ const App = () => {
         </AppBar>
         <Container>
           <Box textAlign="center" my={6}>
+            <Avatar
+              src={profile}
+              sx={{ width: 150, height: 150, mx: "auto", mb: 2 }}
+            />
             <Typography variant="h2" sx={{ fontWeight: "bold" }}>
               Frontend Developer
             </Typography>
@@ -68,6 +86,7 @@ const App = () => {
             <Grid container spacing={3}>
               <Grid item xs={12} sm={4}>
                 <Card
+                  className="project-card" // Fixed: Added to all Cards
                   sx={{
                     transition: "transform 0.3s",
                     "&:hover": { transform: "scale(1.05)" },
@@ -90,6 +109,7 @@ const App = () => {
               </Grid>
               <Grid item xs={12} sm={4}>
                 <Card
+                  className="project-card" // Added here
                   sx={{
                     transition: "transform 0.3s",
                     "&:hover": { transform: "scale(1.05)" },
@@ -108,6 +128,7 @@ const App = () => {
               </Grid>
               <Grid item xs={12} sm={4}>
                 <Card
+                  className="project-card" // Added here
                   sx={{
                     transition: "transform 0.3s",
                     "&:hover": { transform: "scale(1.05)" },
@@ -126,7 +147,6 @@ const App = () => {
               </Grid>
             </Grid>
           </Box>
-
           <Box my={6}>
             <Typography variant="h4" gutterBottom>
               Skills
@@ -149,7 +169,6 @@ const App = () => {
                 { name: "HTML", src: html },
                 { name: "CSS", src: css },
                 { name: "Git", src: git },
-                
               ].map((skill) => (
                 <Box
                   key={skill.name}
