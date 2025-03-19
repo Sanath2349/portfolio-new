@@ -61,8 +61,14 @@ const App = () => {
           color: "text.primary",
         }}
       >
-        <AppBar position="static" elevation={2}>
-          <Toolbar sx={{ justifyContent: "space-between" }}>
+        <AppBar position="sticky" elevation={2}>
+          <Toolbar
+            sx={{
+              justifyContent: "space-between",
+              background:
+                "radial-gradient(circle, rgb(13, 20, 55) 0%, rgb(21, 6, 9) 100%)",
+            }}
+          >
             <Typography variant="h6">Sanath Geedipally</Typography>
             <IconButton color="inherit" onClick={toggleTheme}>
               {isLightMode ? <Brightness7Icon /> : <Brightness4Icon />}
@@ -87,7 +93,7 @@ const App = () => {
             <Typography variant="h4" gutterBottom>
               About Me
             </Typography>
-            <Typography variant="h6" sx={{ maxWidth: 600, lineHeight: 1.6 }}>
+            <Typography variant="h6" sx={{ maxWidth: 800, lineHeight: 1.6 }}>
               Self-taught Frontend Developer from Hyderabad, currently building
               real-world projects at Snipe Tech Pvt Ltd. Passionate about React,
               Material UI, and AI-driven solutions.
@@ -170,8 +176,8 @@ const App = () => {
                   <CardContent>
                     <Typography variant="h6">Priacc Innovations</Typography>
                     <Typography color="textSecondary">
-                      Static landing page for a SaaS agency
-                      client using React & Material UI
+                      Static landing page for a SaaS agency client using React &
+                      Material UI
                     </Typography>
                     <Box
                       sx={{
@@ -183,7 +189,7 @@ const App = () => {
                     >
                       <Button
                         variant="contained"
-                        href="https://www.priaccinovations.com"
+                        href="https://www.priaccinnovations.com"
                         target="_blank"
                         sx={{
                           flex: 1,
@@ -195,7 +201,7 @@ const App = () => {
                       </Button>
                       <Button
                         variant="outlined"
-                        href="https://github.com/Sanath2349/priaccinovations"
+                        href="https://github.com/Sanath2349/priaccinnovations"
                         target="_blank"
                         sx={{
                           flex: 1,
@@ -223,13 +229,43 @@ const App = () => {
                 >
                   <CardMedia component="img" height="180" image={exousiass} />
                   <CardContent>
-                    <Typography variant="h6">Task Tracker (Planned)</Typography>
+                    <Typography variant="h6">Defect Logger</Typography>
                     <Typography color="textSecondary">
-                      Task management app with React
+                      A React app tp log your Defects or tasks and track them in real-time
                     </Typography>
-                    <Button variant="outlined" href="#" sx={{ mt: 2 }}>
-                      Coming Soon
-                    </Button>
+                    <Box
+                      sx={{
+                        mt: 2,
+                        display: "flex",
+                        gap: 1,
+                        justifyContent: "center",
+                      }}
+                    >
+                      <Button
+                        variant="contained"
+                        href=""
+                        target="_blank"
+                        sx={{
+                          flex: 1,
+                          bgcolor: "customButton.main",
+                          color: "customButton.contrastText",
+                        }}
+                      >
+                        Comming soon
+                      </Button>
+                      <Button
+                        variant="outlined"
+                        href="https://github.com/Sanath2349/task-tracker.git"
+                        target="_blank"
+                        sx={{
+                          flex: 1,
+                          borderColor: "customButton.border",
+                          color: "customButton.main",
+                        }}
+                      >
+                        GitHub
+                      </Button>
+                    </Box>
                   </CardContent>
                 </Card>
               </Grid>
